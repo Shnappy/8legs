@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://c1s4mqvmcduch"]
+[gd_scene load_steps=8 format=3 uid="uid://c1s4mqvmcduch"]
 
-[ext_resource type="PackedScene" uid="uid://cykt4oq8jydnl" path="res://cave.glb" id="1_1m1d5"]
+[ext_resource type="PackedScene" uid="uid://wb4brit3cxli" path="res://cave.glb" id="1_1m1d5"]
 [ext_resource type="PackedScene" uid="uid://dgpjxoygnvyy4" path="res://assets/simple_fpsplayer/Player.tscn" id="2_wcxpc"]
+[ext_resource type="PackedScene" uid="uid://dsch34tmvpjut" path="res://blender/globug/globug.blend" id="3_yp4xy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b2eg1"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -21,8 +22,7 @@ tonemap_mode = 2
 ssao_enabled = true
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_i7xo6"]
-auto_exposure_scale = 0.1
-auto_exposure_speed = 3.87
+auto_exposure_speed = 2.0
 
 [node name="Node3D" type="Node3D"]
 
@@ -39,6 +39,7 @@ transform = Transform3D(-0.982499, 0, -0.186267, -0.183503, 0.17162, 0.967922, 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.923, 41.9606, 39.1269)
 
 [node name="Camera3D" parent="Player/rotation_helper" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00196457, 0.0290222, 0.01577)
 attributes = SubResource("CameraAttributesPractical_i7xo6")
 current = true
 
@@ -48,5 +49,15 @@ light_energy = 6.0
 light_indirect_energy = 3.0
 light_size = 0.495
 spot_angle = 17.71
+
+[node name="globug" parent="." instance=ExtResource("3_yp4xy")]
+transform = Transform3D(0.00550332, -0.128886, -0.991644, -0.923112, -0.381946, 0.0445193, -0.384492, 0.915153, -0.121078, 33.0238, 14.4312, 39.072)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="globug"]
+transform = Transform3D(1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0, 0, 1, -0.00875854, 0.00232124, 0.00631714)
+light_color = Color(0.756863, 1, 0.529412, 1)
+light_energy = 0.354
+omni_range = 7.665
+omni_attenuation = 2.54912
 
 [editable path="Player"]
