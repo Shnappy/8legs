@@ -54,10 +54,10 @@ spot_angle = 17.71
 transform = Transform3D(0.00550332, -0.128886, -0.991644, -0.923112, -0.381946, 0.0445193, -0.384492, 0.915153, -0.121078, 33.0238, 14.4312, 39.072)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="globug"]
-transform = Transform3D(1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0, 0, 1, -0.00875854, 0.00232124, 0.00631714)
+transform = Transform3D(1, -4.17233e-07, 8.56817e-08, -1.49012e-07, 1, -1.3411e-07, 1.49012e-08, -3.72529e-08, 1, 0.286289, 0.00231743, 0.00630951)
 light_color = Color(0.756863, 1, 0.529412, 1)
 light_energy = 0.354
-omni_range = 7.665
-omni_attenuation = 2.54912
+omni_range = 9.003
+omni_attenuation = 2.14355
 
 [editable path="Player"]
