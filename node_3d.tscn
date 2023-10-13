@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://c1s4mqvmcduch"]
 
-[ext_resource type="PackedScene" uid="uid://cykt4oq8jydnl" path="res://cave (2).glb" id="1_1m1d5"]
+[ext_resource type="PackedScene" uid="uid://cykt4oq8jydnl" path="res://cave.glb" id="1_1m1d5"]
 [ext_resource type="PackedScene" uid="uid://dgpjxoygnvyy4" path="res://assets/simple_fpsplayer/Player.tscn" id="2_wcxpc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b2eg1"]
@@ -29,7 +29,7 @@ auto_exposure_speed = 3.87
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_2opxa")
 
-[node name="cave (2)" parent="." instance=ExtResource("1_1m1d5")]
+[node name="cave" parent="." instance=ExtResource("1_1m1d5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.8799, 12.4234, 28.8428)
 
 [node name="Camera3D" type="Camera3D" parent="."]
