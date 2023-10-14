@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://c1s4mqvmcduch"]
+[gd_scene load_steps=9 format=3 uid="uid://c1s4mqvmcduch"]
 
 [ext_resource type="PackedScene" uid="uid://wb4brit3cxli" path="res://cave.glb" id="1_1m1d5"]
 [ext_resource type="PackedScene" uid="uid://dgpjxoygnvyy4" path="res://assets/simple_fpsplayer/Player.tscn" id="2_wcxpc"]
 [ext_resource type="PackedScene" uid="uid://dsch34tmvpjut" path="res://blender/globug/globug.blend" id="3_yp4xy"]
+[ext_resource type="Script" path="res://emission-light.gd" id="4_1o7uh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b2eg1"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -53,11 +54,13 @@ spot_angle = 17.71
 [node name="globug" parent="." instance=ExtResource("3_yp4xy")]
 transform = Transform3D(0.00550332, -0.128886, -0.991644, -0.923112, -0.381946, 0.0445193, -0.384492, 0.915153, -0.121078, 33.0238, 14.4312, 39.072)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="globug"]
-transform = Transform3D(1, -4.17233e-07, 8.56817e-08, -1.49012e-07, 1, -1.3411e-07, 1.49012e-08, -3.72529e-08, 1, 0.286289, 0.00231743, 0.00630951)
-light_color = Color(0.756863, 1, 0.529412, 1)
+[node name="light" type="OmniLight3D" parent="globug/Bug" index="0"]
+transform = Transform3D(3.33333, -1.66893e-06, 3.12924e-07, -3.57628e-07, 3.33333, -4.17233e-07, 5.96046e-08, -8.9407e-08, 3.33333, 0.9543, 0.00772095, 0.0209961)
+light_color = Color(0.67451, 1, 0.223529, 1)
 light_energy = 0.354
-omni_range = 9.003
-omni_attenuation = 2.14355
+omni_range = 11.276
+omni_attenuation = 2.21914
+script = ExtResource("4_1o7uh")
 
 [editable path="Player"]
+[editable path="globug"]
