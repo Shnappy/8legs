@@ -30,10 +30,19 @@ environment = SubResource("Environment_2opxa")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.8799, 12.4234, 28.8428)
 
 [node name="globug" parent="." instance=ExtResource("3_o38ja")]
-transform = Transform3D(1, 0, 0, 0, 0.55718, 0.830391, 0, -0.830391, 0.55718, 31.6041, 10.2221, 40.4159)
+transform = Transform3D(0.917911, 0.305652, -0.253012, -0.28869, 0.951908, 0.102606, 0.272206, -0.0211407, 0.962006, 31.4897, 10.1869, 40.4684)
 motion_mode = 1
 
 [node name="Player" parent="." instance=ExtResource("3_ml0je")]
 transform = Transform3D(0.671669, 0, 0.740851, 0, 1, 0, -0.740851, 0, 0.671669, 33.862, 10.9075, 43.1156)
+
+[node name="globug2" parent="." instance=ExtResource("3_o38ja")]
+transform = Transform3D(1, 0, 0, 0, 0.820391, -0.571802, 0, 0.571802, 0.820391, 31, 11.4971, 37.5608)
+
+[node name="globug3" parent="." instance=ExtResource("3_o38ja")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 10.4819, 38.0985)
+
+[node name="globug4" parent="." instance=ExtResource("3_o38ja")]
+transform = Transform3D(1, 0, 0, 0, -0.912091, 0.409987, 0, -0.409987, -0.912091, 29, 12.7667, 40.1311)
 
 [editable path="Player"]

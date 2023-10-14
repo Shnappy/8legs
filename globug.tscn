@@ -24,13 +24,13 @@ omni_attenuation = 2.21914
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("ConvexPolygonShape3D_84hcj")
 
-[node name="fp1" parent="." instance=ExtResource("2_8xrjq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0878122, 0, -0.278909)
-
 [node name="fp0" parent="." instance=ExtResource("2_8xrjq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00495481, 0, 0.579914)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.106375, 0, -0.0979881)
+
+[node name="fp1" parent="." instance=ExtResource("2_8xrjq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00124216, 0, 0.346017)
 
 [node name="fp2" parent="." instance=ExtResource("2_8xrjq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0745171, 0, -0.2967)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11384, 0, -0.106891)
 
 [editable path="globug"]
