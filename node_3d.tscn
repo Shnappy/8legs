@@ -1,9 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://c1s4mqvmcduch"]
+[gd_scene load_steps=6 format=3 uid="uid://c1s4mqvmcduch"]
 
 [ext_resource type="PackedScene" uid="uid://wb4brit3cxli" path="res://cave.glb" id="1_1m1d5"]
-[ext_resource type="PackedScene" uid="uid://dgpjxoygnvyy4" path="res://assets/simple_fpsplayer/Player.tscn" id="2_wcxpc"]
-[ext_resource type="PackedScene" uid="uid://dsch34tmvpjut" path="res://blender/globug/globug.blend" id="3_yp4xy"]
-[ext_resource type="Script" path="res://emission-light.gd" id="4_1o7uh"]
+[ext_resource type="PackedScene" uid="uid://d3bloycjs21qd" path="res://globug.tscn" id="3_o38ja"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b2eg1"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -22,10 +20,13 @@ ambient_light_energy = 0.0
 tonemap_mode = 2
 ssao_enabled = true
 
-[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_i7xo6"]
-auto_exposure_speed = 2.0
-
 [node name="Node3D" type="Node3D"]
+
+[node name="light" type="OmniLight3D" parent="."]
+light_color = Color(0.67451, 1, 0.223529, 1)
+light_energy = 0.354
+omni_range = 11.276
+omni_attenuation = 2.21914
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_2opxa")
@@ -34,33 +35,9 @@ environment = SubResource("Environment_2opxa")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.8799, 12.4234, 28.8428)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.982499, 0, -0.186267, -0.183503, 0.17162, 0.967922, 0.031967, 0.985163, -0.168616, 31.672, 28.4182, 40.9403)
-
-[node name="Player" parent="." instance=ExtResource("2_wcxpc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.923, 41.9606, 39.1269)
-
-[node name="Camera3D" parent="Player/rotation_helper" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00196457, 0.0290222, 0.01577)
-attributes = SubResource("CameraAttributesPractical_i7xo6")
+transform = Transform3D(0.820982, -0.241319, 0.517449, 0.0590604, 0.937321, 0.343426, -0.567891, -0.251386, 0.783776, 34.2912, 11.9468, 43.0137)
 current = true
 
-[node name="flashlight_player" parent="Player/rotation_helper/Camera3D" index="0"]
-visible = true
-light_energy = 6.0
-light_indirect_energy = 3.0
-light_size = 0.495
-spot_angle = 17.71
-
-[node name="globug" parent="." instance=ExtResource("3_yp4xy")]
-transform = Transform3D(0.00550332, -0.128886, -0.991644, -0.923112, -0.381946, 0.0445193, -0.384492, 0.915153, -0.121078, 33.0238, 14.4312, 39.072)
-
-[node name="light" type="OmniLight3D" parent="globug/Bug" index="0"]
-transform = Transform3D(3.33333, -1.66893e-06, 3.12924e-07, -3.57628e-07, 3.33333, -4.17233e-07, 5.96046e-08, -8.9407e-08, 3.33333, 0.9543, 0.00772095, 0.0209961)
-light_color = Color(0.67451, 1, 0.223529, 1)
-light_energy = 0.354
-omni_range = 11.276
-omni_attenuation = 2.21914
-script = ExtResource("4_1o7uh")
-
-[editable path="Player"]
-[editable path="globug"]
+[node name="globug" parent="." instance=ExtResource("3_o38ja")]
+transform = Transform3D(1, 0, 0, 0, -0.856537, 0.516085, 0, -0.516085, -0.856537, 31.6041, 10.2221, 40.4159)
+motion_mode = 1
