@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c1s4mqvmcduch"]
+[gd_scene load_steps=7 format=3 uid="uid://c1s4mqvmcduch"]
 
-[ext_resource type="PackedScene" uid="uid://wb4brit3cxli" path="res://cave.glb" id="1_1m1d5"]
-[ext_resource type="PackedScene" uid="uid://d3bloycjs21qd" path="res://globug.tscn" id="3_o38ja"]
+[ext_resource type="PackedScene" uid="uid://cykt4oq8jydnl" path="res://cave.glb" id="1_1m1d5"]
+[ext_resource type="PackedScene" uid="uid://dgpjxoygnvyy4" path="res://assets/simple_fpsplayer/Player.tscn" id="3_ml0je"]
+[ext_resource type="PackedScene" uid="uid://br472a3dvd7si" path="res://globug.tscn" id="3_o38ja"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b2eg1"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -22,22 +23,17 @@ ssao_enabled = true
 
 [node name="Node3D" type="Node3D"]
 
-[node name="light" type="OmniLight3D" parent="."]
-light_color = Color(0.67451, 1, 0.223529, 1)
-light_energy = 0.354
-omni_range = 11.276
-omni_attenuation = 2.21914
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_2opxa")
 
 [node name="cave" parent="." instance=ExtResource("1_1m1d5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.8799, 12.4234, 28.8428)
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.820982, -0.241319, 0.517449, 0.0590604, 0.937321, 0.343426, -0.567891, -0.251386, 0.783776, 34.2912, 11.9468, 43.0137)
-current = true
-
 [node name="globug" parent="." instance=ExtResource("3_o38ja")]
-transform = Transform3D(1, 0, 0, 0, -0.856537, 0.516085, 0, -0.516085, -0.856537, 31.6041, 10.2221, 40.4159)
+transform = Transform3D(1, 0, 0, 0, 0.55718, 0.830391, 0, -0.830391, 0.55718, 31.6041, 10.2221, 40.4159)
 motion_mode = 1
+
+[node name="Player" parent="." instance=ExtResource("3_ml0je")]
+transform = Transform3D(0.671669, 0, 0.740851, 0, 1, 0, -0.740851, 0, 0.671669, 33.862, 10.9075, 43.1156)
+
+[editable path="Player"]

@@ -1,20 +1,18 @@
 extends CharacterBody3D
 
 func snap_to_floor():
-	var rays = [$rays/fp0, $rays/fp1, $rays/fp2]
-	if all(rays, func(r): r.is_colliding):
+	var rays = [$fp0, $fp1, $fp2]
+	if all(rays, func(r): return r.is_colliding() ):
 		var collisions = rays.map(func(r): return r.get_collision_point())
-		var n = normal(collisions[2], collisions[1], collisions[0])
-		look_at(global_position - n)
+		var n = normal(collisions[2], collisions[1], collisions[0]).rotated(Vector3(1, 0, 0), PI/2)
+		look_at(global_position - n, transform.basis.y)
 		move_and_collide(vec3_average(collisions) - vec3_average(rays.map(func(r): return r.global_position)))
-		#get_node("..").transform.origin = vec3_average(collisions)
-		#get_node("..").look_at(get_node("..").transform.origin + n, Vector3.UP)
 		print("snapped to floor")
 
 func all(a, f: Callable):
-	return true
 	for e in a:
 		if not f.call(e):
+			print ("nuh uh")
 			return false
 	return true
 
@@ -24,7 +22,7 @@ func vec3_average(a):
 func normal(a, b, c):
 	var side1 = b - a
 	var side2 = c - a
-	return side1.cross(side2).normalized()
+	return side1.cross(side2)
 
 
 func look_at_with_y(trans,new_y,v_up):
@@ -46,7 +44,10 @@ func _ready():
 func _process(delta):
 	pass
 
-
+var i = -20
 func _physics_process(delta):
+	i += 1
+	if i > 10:
 		snap_to_floor()
+		i = 0
 
